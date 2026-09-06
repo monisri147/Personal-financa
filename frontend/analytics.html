@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceFlow - Analytics</title>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- ================= SIDEBAR NAVIGATION ================= -->
+        <aside class="sidebar">
+            <div class="brand">💰 FinanceFlow</div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html">🏠 Dashboard</a>
+                <a href="transactions.html">💳 Transactions</a>
+                <a href="budget.html">💰 Budget</a>
+                <a href="analytics.html" class="active">📊 Analytics</a>
+                <a href="profile.html">👤 Profile</a>
+            </nav>
+            <div class="logout-section">
+                <button id="logoutBtn" class="logout-btn">🚪 Logout</button>
+            </div>
+        </aside>
+
+        <!-- ================= MOBILE HEADER ================= -->
+        <header class="mobile-header">
+            <div class="logo">💰 FinanceFlow</div>
+            <button id="sidebarToggle" class="menu-btn">☰</button>
+        </header>
+
+        <!-- ================= MAIN CONTENT AREA ================= -->
+        <main class="main-content">
+
+            <!-- Title Section -->
+            <div class="welcome-section">
+                <div>
+                    <h1>Financial Analytics</h1>
+                    <p>Understand your income and spending patterns.</p>
+                </div>
+            </div>
+
+            <!-- ================= SUMMARY CARDS ================= -->
+            <section class="summary-grid">
+                
+                <!-- Total Income -->
+                <div class="card summary-card income">
+                    <div class="header-row">
+                        <span class="title">Total Income</span>
+                        <div class="icon-wrapper">📈</div>
+                    </div>
+                    <div class="amount" id="analyticsIncome">₹0</div>
+                    <span class="subtitle">All recorded income</span>
+                </div>
+
+                <!-- Total Expenses -->
+                <div class="card summary-card expense">
+                    <div class="header-row">
+                        <span class="title">Total Expenses</span>
+                        <div class="icon-wrapper">📉</div>
+                    </div>
+                    <div class="amount" id="analyticsExpense">₹0</div>
+                    <span class="subtitle">All recorded expenses</span>
+                </div>
+
+                <!-- Balance -->
+                <div class="card summary-card balance">
+                    <div class="header-row">
+                        <span class="title">Net Balance</span>
+                        <div class="icon-wrapper">🏦</div>
+                    </div>
+                    <div class="amount" id="analyticsBalance">₹0</div>
+                    <span class="subtitle">Income minus expenses</span>
+                </div>
+
+            </section>
+
+            <!-- ================= CHARTS SECTION ================= -->
+            <section class="chart-grid">
+                
+                <!-- Income vs Expense -->
+                <div class="card chart-card">
+                    <h2>Income vs Expenses</h2>
+                    <div class="chart-container">
+                        <canvas id="incomeExpenseChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Category Spending Chart -->
+                <div class="card chart-card">
+                    <h2>Spending by Category</h2>
+                    <div class="chart-container">
+                        <canvas id="expenseChart"></canvas>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- ================= SPENDING SUMMARY ================= -->
+            <section class="card transactions-card">
+                <h2>Spending Summary</h2>
+                <div id="spendingSummary" style="margin-top: 16px;">
+                    <p style="color: var(--text-secondary);">No expense data available.</p>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script type="module" src="js/analytics.js"></script>
+
+    <!-- Mobile Sidebar Toggle -->
+    <script>
+        const sidebar = document.querySelector('.sidebar');
+        const toggle = document.getElementById('sidebarToggle');
+        if (toggle && sidebar) {
+            toggle.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+            });
+        }
+    </script>
+
+</body>
+
+</html>

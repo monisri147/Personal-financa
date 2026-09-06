@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceFlow - Login & Authentication</title>
+    <!-- Master Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Auth & Glassmorphism Stylesheet -->
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+
+    <div class="auth-page-container">
+
+        <!-- ================= LEFT 50%: FINANCIAL VISUAL ================= -->
+        <div class="auth-visual-side">
+            <div class="visual-background-image" style="background-image: url('assets/fintech_wealth_hero.png');"></div>
+            <div class="visual-gradient-overlay"></div>
+            
+            <!-- Floating Holographic Financial Metrics & Badges -->
+            <div class="visual-content-overlay">
+                <div class="visual-badge top-badge">
+                    <span class="badge-icon">📈</span>
+                    <div class="badge-text">
+                        <span class="badge-title">Net Wealth Growth</span>
+                        <span class="badge-value">+34.8% This Quarter</span>
+                    </div>
+                </div>
+
+                <div class="visual-badge bottom-badge">
+                    <span class="badge-icon">🔒</span>
+                    <div class="badge-text">
+                        <span class="badge-title">Bank-Grade Security</span>
+                        <span class="badge-value">256-Bit Encrypted Data</span>
+                    </div>
+                </div>
+
+                <div class="visual-hero-text">
+                    <h2>Smart Financial Intelligence</h2>
+                    <p>Visualize, budget & scale your personal wealth with powerful automated tracking and real-time insights.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= RIGHT 50%: LOGIN AREA ================= -->
+        <div class="auth-form-side">
+            
+            <!-- Ambient Glow Background Blobs -->
+            <div class="ambient-glow glow-blue"></div>
+            <div class="ambient-glow glow-purple"></div>
+
+            <!-- Translucent Liquid-Glass Card -->
+            <div class="auth-card">
+
+                <!-- Logo & Brand Header -->
+                <div class="auth-header">
+                    <h1 class="brand-logo">💰 Finance<span class="brand-gradient">Flow</span></h1>
+                    <p class="brand-tagline">Personal Finance & Budget Visualizer</p>
+                </div>
+
+                <!-- ================= LOGIN SECTION ================= -->
+                <div id="loginSection">
+
+                    <div class="welcome-block">
+                        <h2>Welcome Back!</h2>
+                        <h3 class="welcome-client">Welcome Client 👋</h3>
+                        <p class="auth-subtitle">Login to manage your finances</p>
+                    </div>
+
+                    <form id="loginForm" autocomplete="on">
+
+                        <!-- Email Input -->
+                        <div class="input-group">
+                            <label for="loginEmail">Email Address</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">✉️</span>
+                                <input
+                                    type="email"
+                                    id="loginEmail"
+                                    placeholder="name@example.com"
+                                    required
+                                    autocomplete="email"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Password Input -->
+                        <div class="input-group">
+                            <label for="loginPassword">Password</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">🔒</span>
+                                <input
+                                    type="password"
+                                    id="loginPassword"
+                                    placeholder="••••••••"
+                                    required
+                                    autocomplete="current-password"
+                                >
+                                <button type="button" id="toggleLoginPasswordBtn" class="password-toggle-btn" title="Toggle password visibility" aria-label="Toggle password visibility">
+                                    <span class="eye-icon">👁️</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Remember Me & Forgot Password Row -->
+                        <div class="form-options">
+                            <label class="remember-me">
+                                <input type="checkbox" id="rememberMe">
+                                <span>Remember me</span>
+                            </label>
+                            <a href="#" id="forgotPasswordBtn" class="forgot-password">Forgot Password?</a>
+                        </div>
+
+                        <!-- Error Message -->
+                        <p id="loginError" class="error-message"></p>
+
+                        <!-- Sign In Button -->
+                        <button type="submit" class="auth-btn">
+                            <span>Sign In</span>
+                            <span class="btn-arrow">→</span>
+                        </button>
+
+                    </form>
+
+                    <!-- Divider -->
+                    <div class="auth-divider">
+                        <span>OR</span>
+                    </div>
+
+                    <!-- Create Account Link -->
+                    <p class="switch-text">
+                        Don't have an account?
+                        <button type="button" id="showRegisterBtn" class="switch-btn">
+                            Create Account
+                        </button>
+                    </p>
+
+                </div>
+
+                <!-- ================= REGISTER SECTION ================= -->
+                <div id="registerSection" class="hidden">
+
+                    <div class="welcome-block">
+                        <h2>Create Account</h2>
+                        <h3 class="welcome-client">Start Your Journey 🚀</h3>
+                        <p class="auth-subtitle">Start managing your money today</p>
+                    </div>
+
+                    <form id="registerForm" autocomplete="on">
+
+                        <!-- Full Name -->
+                        <div class="input-group">
+                            <label for="registerName">Full Name</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">👤</span>
+                                <input
+                                    type="text"
+                                    id="registerName"
+                                    placeholder="John Doe"
+                                    required
+                                    autocomplete="name"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Email Address -->
+                        <div class="input-group">
+                            <label for="registerEmail">Email Address</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">✉️</span>
+                                <input
+                                    type="email"
+                                    id="registerEmail"
+                                    placeholder="name@example.com"
+                                    required
+                                    autocomplete="email"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="input-group">
+                            <label for="registerPassword">Password</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">🔒</span>
+                                <input
+                                    type="password"
+                                    id="registerPassword"
+                                    placeholder="Min. 6 characters"
+                                    minlength="6"
+                                    required
+                                    autocomplete="new-password"
+                                >
+                                <button type="button" id="toggleRegisterPasswordBtn" class="password-toggle-btn" title="Toggle password visibility" aria-label="Toggle password visibility">
+                                    <span class="eye-icon">👁️</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Confirm Password -->
+                        <div class="input-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">🔑</span>
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    placeholder="Repeat password"
+                                    minlength="6"
+                                    required
+                                    autocomplete="new-password"
+                                >
+                            </div>
+                        </div>
+
+                        <p id="registerError" class="error-message"></p>
+                        <p id="registerSuccess" class="success-message"></p>
+
+                        <!-- Register Button -->
+                        <button type="submit" class="auth-btn">
+                            <span>Register Account</span>
+                            <span class="btn-arrow">→</span>
+                        </button>
+
+                    </form>
+
+                    <!-- Divider -->
+                    <div class="auth-divider">
+                        <span>OR</span>
+                    </div>
+
+                    <!-- Switch to Login -->
+                    <p class="switch-text">
+                        Already have an account?
+                        <button type="button" id="showLoginBtn" class="switch-btn">
+                            Sign In
+                        </button>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript logic -->
+    <script src="js/auth.js"></script>
+
+</body>
+
+</html>

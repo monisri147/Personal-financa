@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceFlow - Budget</title>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- ================= SIDEBAR NAVIGATION ================= -->
+        <aside class="sidebar">
+            <div class="brand">💰 FinanceFlow</div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html">🏠 Dashboard</a>
+                <a href="transactions.html">💳 Transactions</a>
+                <a href="budget.html" class="active">💰 Budget</a>
+                <a href="analytics.html">📊 Analytics</a>
+                <a href="profile.html">👤 Profile</a>
+            </nav>
+            <div class="logout-section">
+                <button id="logoutBtn" class="logout-btn">🚪 Logout</button>
+            </div>
+        </aside>
+
+        <!-- ================= MOBILE HEADER ================= -->
+        <header class="mobile-header">
+            <div class="logo">💰 FinanceFlow</div>
+            <button id="sidebarToggle" class="menu-btn">☰</button>
+        </header>
+
+        <!-- ================= MAIN CONTENT AREA ================= -->
+        <main class="main-content">
+
+            <!-- Title -->
+            <div class="welcome-section">
+                <div>
+                    <h1>Monthly Budget</h1>
+                    <p>Set and monitor your monthly spending limit.</p>
+                </div>
+            </div>
+
+            <!-- ================= SET BUDGET ================= -->
+            <section class="card budget-card" style="margin-bottom: 32px;">
+                <h2>Set Monthly Budget</h2>
+                <div class="budget-input" style="display: flex; gap: 16px; margin-top: 16px;">
+                    <input
+                        type="number"
+                        id="budgetInput"
+                        placeholder="Enter monthly budget amount (e.g. 50000)"
+                        min="1"
+                        style="flex: 1;">
+                    <button id="setBudgetBtn" class="btn">
+                        Set Budget
+                    </button>
+                </div>
+            </section>
+
+            <!-- ================= BUDGET OVERVIEW ================= -->
+            <section class="summary-grid">
+                
+                <!-- Monthly Budget -->
+                <div class="card summary-card budget">
+                    <div class="header-row">
+                        <span class="title">Monthly Budget</span>
+                        <div class="icon-wrapper">💰</div>
+                    </div>
+                    <div class="amount" id="budgetAmount">₹0</div>
+                    <span class="subtitle">Your spending limit</span>
+                </div>
+
+                <!-- Total Spent -->
+                <div class="card summary-card expense">
+                    <div class="header-row">
+                        <span class="title">Total Spent</span>
+                        <div class="icon-wrapper">📉</div>
+                    </div>
+                    <div class="amount" id="totalExpense">₹0</div>
+                    <span class="subtitle">Spent this month</span>
+                </div>
+
+                <!-- Remaining -->
+                <div class="card summary-card balance">
+                    <div class="header-row">
+                        <span class="title">Remaining</span>
+                        <div class="icon-wrapper">💵</div>
+                    </div>
+                    <div class="amount" id="remainingBudget">₹0</div>
+                    <span class="subtitle">Available budget</span>
+                </div>
+
+            </section>
+
+            <!-- ================= PROGRESS & WARNING ================= -->
+            <section class="card budget-card" style="margin-bottom: 32px;">
+                <h2>Budget Usage Progress</h2>
+                <div class="budget-info" style="margin-top: 16px;">
+                    <div>
+                        <span>Budget</span>
+                        <strong id="budgetAmount2">₹0</strong>
+                    </div>
+                    <div>
+                        <span>Spent</span>
+                        <strong id="spentAmount">₹0</strong>
+                    </div>
+                    <div>
+                        <span>Usage</span>
+                        <strong id="budgetPercentage">0%</strong>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
+                <p id="warningMessage" class="budget-warning"></p>
+            </section>
+
+            <!-- ================= TIPS ================= -->
+            <section class="card">
+                <h2>Budget Status Tips</h2>
+                <p id="budgetStatus" style="color: var(--text-secondary); margin-top: 12px; font-size: 15px; line-height: 1.6;">
+                    Set a budget to start monitoring your spending.
+                </p>
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script type="module" src="js/app.js"></script>
+
+    <!-- Mobile Sidebar Toggle -->
+    <script>
+        const sidebar = document.querySelector('.sidebar');
+        const toggle = document.getElementById('sidebarToggle');
+        if (toggle && sidebar) {
+            toggle.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+            });
+        }
+    </script>
+
+</body>
+
+</html>

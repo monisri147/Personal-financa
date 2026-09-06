@@ -1,0 +1,563 @@
+/* =========================================================
+   FINANCEFLOW - PREMIUM FINTECH AUTHENTICATION STYLESHEET
+   Liquid-Glassmorphism, Dark Futuristic Palette & Responsive Layout
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Dynamic Animations */
+@keyframes floatSlow {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulseGlow {
+    0%, 100% { opacity: 0.35; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.05); }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #070914;
+    color: #f8fafc;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   DESKTOP 50/50 SPLIT-SCREEN LAYOUT
+========================================================= */
+
+.auth-page-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+    background: #070914;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   LEFT 50%: FINANCIAL HERO VISUAL
+========================================================= */
+
+.auth-visual-side {
+    flex: 1;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+    overflow: hidden;
+    background: #070a18;
+}
+
+.visual-background-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.85) contrast(1.1);
+    transform: scale(1.02);
+    transition: transform 10s ease;
+}
+
+.visual-gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background: 
+        linear-gradient(135deg, rgba(7, 9, 20, 0.45) 0%, rgba(15, 23, 42, 0.75) 100%),
+        radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.2), transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(6, 182, 212, 0.15), transparent 50%);
+}
+
+.visual-content-overlay {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Floating Badges */
+.visual-badge {
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    padding: 14px 20px;
+    border-radius: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+}
+
+.top-badge {
+    align-self: flex-start;
+    margin-top: 20px;
+    animation: floatSlow 6s ease-in-out infinite;
+}
+
+.bottom-badge {
+    align-self: flex-end;
+    margin-bottom: 20px;
+    animation: floatSlow 7s ease-in-out infinite 1s;
+}
+
+.badge-icon {
+    font-size: 24px;
+}
+
+.badge-title {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-value {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #38bdf8;
+}
+
+/* Hero Typography */
+.visual-hero-text h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 12px;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+}
+
+.visual-hero-text p {
+    font-size: 15px;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   RIGHT 50%: LOGIN AREA
+========================================================= */
+
+.auth-form-side {
+    flex: 1;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    background: 
+        radial-gradient(circle at 85% 15%, rgba(99, 102, 241, 0.16), transparent 50%),
+        radial-gradient(circle at 15% 85%, rgba(139, 92, 246, 0.16), transparent 50%),
+        #070914;
+}
+
+.ambient-glow {
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.35;
+    pointer-events: none;
+    animation: pulseGlow 8s ease-in-out infinite alternate;
+}
+
+.glow-blue {
+    top: 15%;
+    right: 15%;
+    background: #3b82f6;
+}
+
+.glow-purple {
+    bottom: 15%;
+    left: 15%;
+    background: #8b5cf6;
+}
+
+/* =========================================================
+   TRANSLUCENT LIQUID-GLASS CARD
+========================================================= */
+
+.auth-card {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 440px;
+    background: rgba(13, 17, 38, 0.58);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 28px;
+    padding: 40px 36px;
+    box-shadow: 
+        0 30px 60px -12px rgba(0, 0, 0, 0.7),
+        inset 0 1px 1px rgba(255, 255, 255, 0.2),
+        0 0 35px rgba(99, 102, 241, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Brand Header */
+.auth-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.brand-logo {
+    font-size: 30px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+}
+
+.brand-gradient {
+    background: linear-gradient(135deg, #60a5fa 0%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.brand-tagline {
+    color: #94a3b8;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Welcome Block */
+.welcome-block {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.welcome-block h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #f8fafc;
+    margin-bottom: 4px;
+}
+
+.welcome-client {
+    font-size: 15px;
+    font-weight: 600;
+    color: #818cf8;
+    margin-bottom: 6px;
+}
+
+.auth-subtitle {
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* =========================================================
+   FORM INPUTS & WRAPPERS
+========================================================= */
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-bottom: 8px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(7, 10, 25, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    transition: all 0.3s ease;
+}
+
+.input-wrapper:focus-within {
+    border-color: #6366f1;
+    background: rgba(15, 23, 42, 0.85);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.22);
+}
+
+.input-icon {
+    padding-left: 14px;
+    font-size: 15px;
+    opacity: 0.8;
+    user-select: none;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 13px 14px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 14px;
+    border-radius: 14px;
+}
+
+.input-wrapper input::placeholder {
+    color: #475569;
+}
+
+.password-toggle-btn {
+    background: none;
+    border: none;
+    padding: 0 14px;
+    cursor: pointer;
+    color: #94a3b8;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    transition: color 0.2s ease;
+}
+
+.password-toggle-btn:hover {
+    color: #818cf8;
+}
+
+/* Form Options (Remember Me & Forgot Password) */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+    margin-bottom: 22px;
+    font-size: 13px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #94a3b8;
+    cursor: pointer;
+    user-select: none;
+}
+
+.remember-me input[type="checkbox"] {
+    accent-color: #6366f1;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.forgot-password {
+    color: #818cf8;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.forgot-password:hover {
+    color: #a5b4fc;
+    text-decoration: underline;
+}
+
+/* =========================================================
+   BUTTONS & ACTIONS
+========================================================= */
+
+.auth-btn {
+    width: 100%;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 6px;
+}
+
+.auth-btn:hover {
+    background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+}
+
+.auth-btn:active {
+    transform: translateY(0);
+}
+
+.btn-arrow {
+    transition: transform 0.2s ease;
+}
+
+.auth-btn:hover .btn-arrow {
+    transform: translateX(4px);
+}
+
+/* Divider */
+.auth-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 22px 0;
+    color: #475569;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.auth-divider span {
+    padding: 0 12px;
+    color: #64748b;
+    letter-spacing: 1px;
+}
+
+/* Switch Text & Button */
+.switch-text {
+    text-align: center;
+    font-size: 14px;
+    color: #94a3b8;
+    margin-top: 4px;
+}
+
+.switch-btn {
+    background: none;
+    border: none;
+    color: #818cf8;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 4px;
+    transition: color 0.2s ease;
+    padding: 2px 4px;
+}
+
+.switch-btn:hover {
+    color: #c084fc;
+    text-decoration: underline;
+}
+
+/* Messages */
+.error-message {
+    color: #f87171;
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    padding: 10px 14px;
+    font-size: 13px;
+    border-radius: 12px;
+    margin-top: 12px;
+    margin-bottom: 14px;
+    text-align: center;
+    display: none;
+}
+
+.error-message:not(:empty) {
+    display: block;
+}
+
+.success-message {
+    color: #34d399;
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    padding: 10px 14px;
+    font-size: 13px;
+    border-radius: 12px;
+    margin-top: 12px;
+    margin-bottom: 14px;
+    text-align: center;
+    display: none;
+}
+
+.success-message:not(:empty) {
+    display: block;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+========================================================= */
+
+@media (max-width: 1024px) {
+    .auth-page-container {
+        flex-direction: column;
+    }
+
+    .auth-visual-side {
+        min-height: 280px;
+        padding: 30px 24px;
+        flex: none;
+    }
+
+    .visual-content-overlay {
+        min-height: auto;
+    }
+
+    .top-badge, .bottom-badge {
+        display: none;
+    }
+
+    .visual-hero-text {
+        text-align: center;
+    }
+
+    .visual-hero-text h2 {
+        font-size: 24px;
+    }
+
+    .visual-hero-text p {
+        font-size: 14px;
+    }
+
+    .auth-form-side {
+        flex: 1;
+        padding: 36px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 32px 20px;
+        border-radius: 22px;
+    }
+
+    .brand-logo {
+        font-size: 26px;
+    }
+
+    .welcome-block h2 {
+        font-size: 20px;
+    }
+}
